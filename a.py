@@ -1,11 +1,13 @@
 import mysql.connector
-
+pa=input("Enter MySql root password")
 mydb = mysql.connector.connect(
   host="localhost",
-  user="yourusername",
-  password="yourpassword"
+  user="root",
+  password="pa"
 )
 
 mycursor = mydb.cursor()
-
-mycursor.execute("CREATE DATABASE mydatabase")
+try:
+    mycursor.execute("CREATE DATABASE todo")
+except Exception:
+    pass

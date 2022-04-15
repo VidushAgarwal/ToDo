@@ -2,9 +2,16 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from os.path import exists
 def main():
-    os.startfile('q.py')
+    f=open('first.ch', 'r')
+    a=f.readline()
+    f.close()
+    if(a=='0'):
+        f=open('first.ch','w')
+        os.startfile('q.py')
+        os.startfile('a.py')
+        f.write('1')
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ToDo.settings')
     try:
