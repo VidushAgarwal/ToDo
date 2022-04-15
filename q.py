@@ -27,13 +27,3 @@ mySQLConnection = getDatabaseConnection(ipaddress, usr, passwd, charset, curtype
 mySQLCursor     = mySQLConnection.cursor()
 
 createUser(mySQLCursor, "todo","root")
-
-mySqlListUsers = "select host, user from mysql.user;"
-mySQLCursor.execute(mySqlListUsers)
-
-# Fetch all the rows
-userList = mySQLCursor.fetchall()
-
-print("List of users:")
-for user in userList:
-    print(user)
