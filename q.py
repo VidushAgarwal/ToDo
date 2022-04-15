@@ -15,7 +15,7 @@ def createUser(cursor, userName, password,
         cursor.execute(sqlCreateUser)
     except Exception as Ex:
         print("Error creating MySQL User: %s"%(Ex))
-    
+
 # Connection parameters and access credentials
 ipaddress   = "127.0.0.1"  # MySQL server is running on local machine
 usr         = "root"       
