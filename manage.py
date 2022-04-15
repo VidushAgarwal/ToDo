@@ -2,13 +2,13 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from os.path import exists
+import a
 def main():
     f=open('first.ch', 'r')
-    a=f.readline()
+    b=f.readline()
     f.close()
-    if(a=='0'):
-        os.startfile('a.py')
+    if(b=='0\n'):
+        a.abc()
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ToDo.settings')
     try:
