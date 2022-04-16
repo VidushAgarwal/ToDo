@@ -2,5 +2,6 @@ from django.contrib import admin
 from django.urls import path
 from home import views
 urlpatterns = [
-    path('', views.homepage, name='home')
+    path('', views.homepage, name='home'),
+    path('first', views.first, name='first')
 ]

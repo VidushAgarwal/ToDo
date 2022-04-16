@@ -1,0 +1,22 @@
+.container{
+    /* border:2px solid red; */
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit{
+    
+}
+.input{
+    height:1vh;
+    border-radius: 6px;
+    padding:10px;
+}
+.submit{
+    height:4.5vh;
+    width:5vw;
+}
+.submit:hover{
+    color:white;
+}

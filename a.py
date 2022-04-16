@@ -1,3 +1,4 @@
+from distutils.util import execute
 import mysql.connector
 def abc():
   pa=input("Enter MySql root password : ")
@@ -16,5 +17,7 @@ def abc():
   mycursor = mydb.cursor()
   try:
       mycursor.execute("CREATE DATABASE todo")
+      mycursor.execute("USE DATABASE todo")
+      mycursor.execute("CREATE TABLE data(uname varchar(20))")
   except Exception:
       pass
