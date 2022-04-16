@@ -1,0 +1,95 @@
+.login-form {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    background-color: white;
+    width: 20%;
+    height: 40%;
+    padding: 40px;
+    opacity: 1;
+    border-radius: 40px;
+}
+
+body {
+    background-image: url(image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    color: white;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* padding-left: 40%; */
+    /* border:2px solid red; */
+    margin: 0px 2vw;
+    margin-bottom: 4vh;
+    text-decoration: none;
+
+}
+
+.color {
+    color: tomato;
+}
+
+.heading-1 {
+    margin-left: 3vw;
+    color: black;
+
+}
+
+.heading-2 {
+    margin-left: 3vw;
+    color: black;
+}
+
+.heading {
+    margin-bottom: 10%;
+
+}
+
+.tx,
+.pw {
+    width: 100%;
+    margin-top: 40px;
+    font-size: 25px;
+    border-radius: 30px;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+}
+.pw{
+    margin-bottom: 5vh;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.submit {
+    position: absolute;
+    left: 40%;
+    font-size: 25px;
+    background-color: tomato;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    /* top: vh; */
+    width:5vw;
+}
+
+ .submit-1 {
+    top: 70%;
+    width: 5.5vw;
+}
+
+.submit-2 {
+    top: 84%;
+}
+
+.hidden {
+    display: none;
+}
