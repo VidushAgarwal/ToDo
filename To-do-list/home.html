@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}{% static "" as abc %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{abc}}style.css">
+</head>
+<body>
+    <div class="container">
+  <form method ="post" action="first" class="page">
+      {% csrf_token %}
+      <input type="text" name="uname" class="input" placeholder="Enter">
+      <input type="submit" value="xyz" name="submit">
+      <input type="submit" value="abc" name="submit">
+  </form>
+  </div>
+</body>
+</html>

@@ -1,22 +1,29 @@
-from icalendar import Calendar, Event, vCalAddress, vText
-import pytz
-from datetime import datetime
-import os
-from pathlib import Path
+import mysql.connector
 
-cal = Calendar()
+try:
+    connection = mysql.connector.connect(host='localhost',
+                                         database='todo',
+                                         user='root',
+                                         password='root')
 
-event = Event()
-event.add('summary', 'Python meeting about calendar')
-event.add('dtstart', datetime(2022, 10, 24, 8, 0, 0, tzinfo=pytz.utc))
-#event.add('dtend', datetime(2022, 10, 24, 10, 0, 0, tzinfo=pytz.utc))
-#event.add('dtstamp', datetime(2022, 10, 24, 0, 10, 0, tzinfo=pytz.utc))
+    sql_select_Query = "select * from home_data where uname='Vidush'"
+    cursor = connection.cursor()
+    cursor.execute(sql_select_Query)
+    # get all records
+    records = cursor.fetchall()
+    print("Total number of rows in table: ", cursor.rowcount)
+    print(records)
+    print("\nPrinting each row")
+    for row in records:
+        print("id=", row[0])
+        print("Uname = ", row[1])
+        print("email = ", row[2])
+        print("passw = ", row[3])
 
-# Adding events to calendar
-cal.add_component(event)
-
-directory = str(Path(__file__).parent.parent) + "/"
-print("ics file will be generated at ", directory)
-f = open(os.path.join(directory, 'example.ics'), 'wb')
-f.write(cal.to_ical())
-f.close()
+except mysql.connector.Error as e:
+    print("Error reading data from MySQL table", e)
+finally:
+    if connection.is_connected():
+        connection.close()
+        cursor.close()
+        print("MySQL connection is closed")
