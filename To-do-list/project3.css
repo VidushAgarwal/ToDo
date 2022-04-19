@@ -28,19 +28,23 @@ a {
 
 }
 
-.color {
+.color{
     color: tomato;
+}
+.color-2{
+    color:black
 }
 
 .heading-1 {
     margin-left: 3vw;
-    color: black;
-
+    /* color: black; */
+   font-weight: bolder;
 }
 
 .heading-2 {
     margin-left: 3vw;
-    color: black;
+    font-weight: bolder;
+    /* color: black; */
 }
 
 .heading {
@@ -51,7 +55,7 @@ a {
 .tx,
 .pw {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 27px;
     font-size: 25px;
     border-radius: 30px;
     text-align: center;
@@ -59,7 +63,7 @@ a {
     padding: 10px;
 }
 .pw{
-    margin-bottom: 5vh;
+    /* margin-top: 100vh; */
 }
 
 input {
@@ -88,6 +92,7 @@ input {
 
 .submit-2 {
     top: 84%;
+    margin-top: 1vh;
 }
 
 .hidden {
