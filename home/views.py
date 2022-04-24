@@ -17,14 +17,14 @@ def signin(request):
         a=data.objects.all()
         b=data.objects.filter(uname=uname)
         for j in b:
-            print("    ", j.passw)
+            #print("    ", j.passw)
             if passw==j.passw:
                 f=1
         for i in a:
             if uname == i.uname and f==1:
-                print("1234567890")
-                return redirect('/index/'+uname)
-        print(type(i.uname), i.uname)
+                #print("1234567890")
+                return redirect('/index')
+        #print(type(i.uname), i.uname)
         Data=data(uname=uname, passw=passw)
         return redirect('/')
 def signup(request):
@@ -34,9 +34,9 @@ def signup(request):
         email=request.POST.get('email')
         passw=request.POST.get('passw')
         a=data.objects.all()
-        for i in a:
+        '''for i in a:
             if uname == i.uname:
-                return redirect('/')
+                return redirect('/')'''
         Data=data(uname=uname, passw=passw, email=email)
         Data.save()
         return redirect('/index/'+uname)

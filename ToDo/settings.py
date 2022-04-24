@@ -79,7 +79,7 @@ f=open
 DATABASES = {
     'default': {
         'ENGINE'  : 'django.db.backends.mysql', # <-- UPDATED line 
-        'NAME'    : 'todo',                 # <-- UPDATED line 
+        'NAME'    : 'todoqwe',                 # <-- UPDATED line 
         'USER'    : 'root',                     # <-- UPDATED line
         'PASSWORD': q.ff(),              # <-- UPDATED line
         'HOST'    : 'localhost',                # <-- UPDATED line

@@ -1,7 +1,7 @@
 <h3>To Do</h3>
 
 
-<form method="POST" action ="index">
+<form method="POST" action ="/index">
     {% csrf_token %}
     {{form.title}}
     <input type ="Submit" name="Create Task">
@@ -9,6 +9,6 @@
 
 {% for task in tasks %}
     <div>
-        <p>{{task}}</p method="POST" action ="/index">
+        <p>{{task}}</p>
     </div>
 {% endfor %}
