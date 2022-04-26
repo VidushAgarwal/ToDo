@@ -1,0 +1,9 @@
+<h3>Update text</h3>
+
+<form method="POST" action ='/index'>
+    {%csrf_token%}
+
+    {{form.title}}
+    {{form.complete}}
+    <input type ="submit" name="Update Task">
+</form>
