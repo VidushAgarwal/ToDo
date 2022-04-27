@@ -12,8 +12,10 @@ def index(request):
     if request.method=='POST':
         #tasks=Task.objects.all()
         xyz=dict(request.POST)
-        xyz['uname']='abc'
-        xyz['title']=xyz['title'][0]
+        print(xyz)
+        if 'title' in xyz.keys():
+            xyz['title']=xyz['title'][0]
+            xyz['uname']='abc'
         print(xyz)
         #print(request.POST, "  ", type(request.POST['title']))
         form =TaskForm(xyz)
@@ -29,20 +31,9 @@ def index(request):
     context={'tasks':tasks, 'form':form}
     #print(tasks)
     return render(request, 'tasks/list.html', context)
-def updateTask(request,pk):
-    task=Task.objects.get(id=pk)
-
-    form =TaskForm(instance=task)
-    
-    if request.method=='POST':
-        form =TaskForm(request.POST, instance=task)
-        if form.is_valid():
-            form.save()
-            return redirect('/index')
-    context={'form' : form}
-    return render(request, 'tasks/update_task.html', context)
-
 def deleteTask(request, pk):
-    item=Task.objects.get(pk)
+    item=Task.objects.get(id=pk)
+    print(pk)
+    d=Task.objects.filter(id=pk).delete()
     context={'item':item}
     return render(request, 'tasks/delete.html')

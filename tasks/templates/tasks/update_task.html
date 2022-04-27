@@ -1,9 +1,7 @@
 <h3>Update text</h3>
 
-<form method="POST" action ='/index'>
+<form method="POST" action ="/up">
     {%csrf_token%}
-
-    {{form.title}}
-    {{form.complete}}
+    <input type="text" name="title">
     <input type ="submit" name="Update Task">
 </form>
