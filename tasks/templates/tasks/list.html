@@ -1,15 +1,35 @@
-<h3>To Do</h3>
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}{% static "" as abc %}
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{abc}}list.css">
+</head>
 
-<form method="POST" action ="/index">
+<body>
+    <form method="POST" action ="logout" class="outing">
+        {% csrf_token %}
+        <input type ="submit" value="Logout" class="out">
+    </form>
+<div class="main">
+<form method="POST" action ="/index" class="adding_item">
     {% csrf_token %}
+    <div class="box">
     {{form.title}}
-    <input type ="Submit" name="Create Task">
+    </div>
+    <input type ="Submit" name="Create Task" class="add_task">
 </form>
 
 {% for task in tasks %}
-    <div>
-        <a href = "{% url 'delete' task.id %}">delete</a>
-        <p>{{task}}</p>
+    <div class="tasking">
+        <p class="task_name">{{task}}</p>
+        <a href = "{% url 'delete' task.id %}" class="del">Delete</a>   
     </div>
 {% endfor %}
+</div>
+</body>
+</html>

@@ -1,4 +1,5 @@
 import email
+from tkinter import W
 from django.shortcuts import render, HttpResponse, redirect
 from home.models import data
 from tasks.urls import *
@@ -12,7 +13,7 @@ def signin(request):
         #print(request.POST)
         uname=request.POST.get('uname')
         passw=request.POST.get('passw')
-        print('abc ',uname)
+        #print('abc ',uname)
         f=0
         a=data.objects.all()
         b=data.objects.filter(uname=uname)
@@ -23,6 +24,7 @@ def signin(request):
         for i in a:
             if uname == i.uname and f==1:
                 #print("1234567890")
+                fi(uname)
                 return redirect('/index')
         #print(type(i.uname), i.uname)
         Data=data(uname=uname, passw=passw)
@@ -34,9 +36,15 @@ def signup(request):
         email=request.POST.get('email')
         passw=request.POST.get('passw')
         a=data.objects.all()
-        '''for i in a:
+        for i in a:
             if uname == i.uname:
-                return redirect('/')'''
+                return redirect('/')
         Data=data(uname=uname, passw=passw, email=email)
         Data.save()
-        return redirect('/index/'+uname)
+        fi(uname)
+        return redirect('/index')
+def fi(uname):
+    f=open("user.user", "w")
+    f.write(uname)
+    f.close()
+    print(145)

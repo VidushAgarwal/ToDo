@@ -6,7 +6,11 @@ from tasks.models import *
 from tasks.forms import *
 # Create your views here.
 def index(request):
-    tasks=Task.objects.filter(uname='abc')
+    f=open("user.user", 'r')
+    u=f.read()
+    print(u)
+    f.close()
+    tasks=Task.objects.filter(uname=u)
     form =TaskForm()
     #print(tasks)
     if request.method=='POST':
@@ -15,8 +19,8 @@ def index(request):
         print(xyz)
         if 'title' in xyz.keys():
             xyz['title']=xyz['title'][0]
-            xyz['uname']='abc'
-        print(xyz)
+            xyz['uname']=u
+        #print(xyz)
         #print(request.POST, "  ", type(request.POST['title']))
         form =TaskForm(xyz)
         #print(form)
@@ -33,7 +37,13 @@ def index(request):
     return render(request, 'tasks/list.html', context)
 def deleteTask(request, pk):
     item=Task.objects.get(id=pk)
-    print(pk)
+    #print(pk)
     d=Task.objects.filter(id=pk).delete()
     context={'item':item}
     return render(request, 'tasks/delete.html')
+def logout(request):
+    print("logout")
+    f=open('user.user', 'w')
+    f.write('q')
+    f.close()
+    return redirect('/')
